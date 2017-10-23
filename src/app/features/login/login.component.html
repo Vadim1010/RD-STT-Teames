@@ -1,0 +1,74 @@
+<div class="container">
+    <div class="row">
+        <form class="login-form text-center" ref-loginForm="ngForm" novalidate="true" (submit)="submitLoginForm(loginForm.value)">
+            <div class="login-form__header">
+                <h2 class="login-form__heading">Students Testing Tool <sup>0.0.1</sup></h2>
+            </div>
+            <div class="login-form__body">
+                <div class="uui-login-panel login-form__epam-login">
+                    <div class="login-panel-body">
+                        <div class="login-panel-section">
+                            <div class="epam-login">
+                                <button class="uui-button large raspberry">
+                                    <i class="fa fa-angle-left"></i>
+                                    EPAM Login
+                                    <i class="fa fa-angle-right"></i>
+                                </button>
+                            </div>
+                            <div class="login-separator login-form__separator">
+                                <div class="border">
+                                    <span></span>
+                                </div>
+                                <div class="text">
+                                    <span>or</span>
+                                </div>
+                                <div class="border">
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="login-form__inputs inputs">
+                    <tt-input [inputType]="'email'"
+                              [inputIconClass]="'fa-envelope'"
+                              ngModel
+                              name="email"
+                              email="true"
+                              required>
+                    </tt-input>
+                    <!--<div *ngIf="loginForm.controls.email?.invalid && loginForm.controls.email.touched" class="help-block">User email is required</div>-->
+                    <!--<validator-message class="help-block"-->
+                                       <!--[field]="loginForm.email">-->
+                    <!--</validator-message>-->
+                    <tt-input [inputType]="'password'"
+                              [inputIconClass]="'fa-lock'"
+                              ngModel
+                              name="password"
+                              required>
+                    </tt-input>
+                    <div *ngIf="loginForm.controls.password?.invalid && loginForm.controls.password.touched" class="help-block">User password is required</div>
+                </div>
+                <div class="uui-login-panel login-form__epam-login">
+                    <div class="login-panel-body">
+                        <div class="login-panel-section">
+                            <div class="epam-login">
+                                <input type="submit" class="uui-button large raspberry uui-button--green"
+                                       vulue="Login"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="login-form__info">
+                    This system is owned by EPAM Systems. If you are not authorized to access this system, exit
+                    immediately.
+                    Unauthorized access to this system is forbidden by company policies, national, and international
+                    laws.
+                    Unauthorized users are subject to criminal and civil penalties as well as company initiated
+                    disciplinary proceedings.By entering this system you acknowledge that you have authorized access
+                    and appropriate of privilege within the system.
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
