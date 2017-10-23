@@ -1,10 +1,11 @@
 ﻿import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule} from '@angular/common';
+
 import { LoginLayoutComponent } from './login-layout.component';
 
 @NgModule({
   imports: [
-    BrowserModule,
+    CommonModule,
   ],
   declarations: [
     LoginLayoutComponent

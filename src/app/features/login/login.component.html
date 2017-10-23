@@ -59,6 +59,7 @@
                         </div>
                     </div>
                 </div>
+                <p *ngIf="authenticationService.error" style="color: red;">{{authenticationService.error}}</p>
                 <div class="login-form__info">
                     This system is owned by EPAM Systems. If you are not authorized to access this system, exit
                     immediately.
