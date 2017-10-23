@@ -31,6 +31,7 @@ import { AppState, InternalStateType } from './app.service';
 
 import '../styles/main.scss';
 import { CoreModule } from './core';
+import { ResourceService } from './core';
 import { SharedModule } from './shared';
 import { FeaturesModule } from './features';
 
@@ -76,6 +77,7 @@ type StoreType = {
   providers: [
     ENV_PROVIDERS,
     APP_PROVIDERS,
+    ResourceService
   ]
 })
 export class AppModule {

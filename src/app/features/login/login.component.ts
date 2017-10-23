@@ -4,7 +4,8 @@ import {
     OnInit, OnDestroy
 } from '@angular/core';
 
-import { iLoginForm } from '../models';
+import { LoginForm } from '../models';
+import { LoginService } from './login.service';
 
 @Component({
     selector: 'tt-login',
@@ -12,21 +13,21 @@ import { iLoginForm } from '../models';
     styleUrls: ['login.component.scss'],
     encapsulation: ViewEncapsulation.None
 })
-export class LoginComponent implements OnInit, OnDestroy{
+export class LoginComponent implements OnInit, OnDestroy {
 
-    constructor() {
+    constructor(private loginService: LoginService) {
     }
 
-    ngOnInit () {
-
-    }
-
-    ngOnDestroy () {
+    ngOnInit() {
 
     }
 
-    submitLoginForm(value: iLoginForm) {
+    ngOnDestroy() {
 
+    }
+
+    submitLoginForm(value: LoginForm) {
+        this.loginService.getForm(value);
     }
 }
 
