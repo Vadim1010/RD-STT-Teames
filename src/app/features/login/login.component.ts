@@ -25,8 +25,7 @@ export class LoginComponent implements OnDestroy {
     }
 
     submitLoginForm(value) {
-        console.log(value);
-        // this.subscription = this.authenticationService.login(value).subscribe((res) => this.router.navigate(['/home']));
+        this.subscription = this.authenticationService.login(value).subscribe((res) => this.router.navigate(['/home']));
     }
 
     logout() {
