@@ -1,6 +1,7 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
-import { AuthenticationService } from '../../core/authentication.service';
+import { AuthenticationService } from './authentication.service';
+import { appConfig } from '../../app.config';
 
 @Component({
     selector: 'tt-login',
@@ -9,6 +10,8 @@ import { AuthenticationService } from '../../core/authentication.service';
     encapsulation: ViewEncapsulation.None
 })
 export class LoginComponent {
+    warningMsg: string = appConfig.loginWarningMsg;
+
     constructor(private authenticationService: AuthenticationService) {
     }
 
