@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
-import { AuthenticationService } from './authentication.service';
+import { AuthenticationService } from '../../core';
 import { appConfig } from '../../app.config';
 
 @Component({
@@ -10,7 +10,7 @@ import { appConfig } from '../../app.config';
     encapsulation: ViewEncapsulation.None
 })
 export class LoginComponent {
-    warningMsg: string = appConfig.loginWarningMsg;
+    private warningMsg: string = appConfig.loginWarningMsg;
 
     constructor(private authenticationService: AuthenticationService) {
     }
@@ -21,5 +21,9 @@ export class LoginComponent {
 
     logout () {
         this.authenticationService.logout();
+    }
+
+    epamLogin() {
+        console.log('epam Login');
     }
 }

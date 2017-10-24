@@ -4,7 +4,7 @@ import { CommonModule} from '@angular/common'
 
 import { LoginComponent } from './login.component';
 import { SharedModule } from '../../shared';
-import { AuthenticationService } from '../../core/authentication.service';
+import { AuthenticationService } from '../../core';
 
 @NgModule({
     imports: [

@@ -21,7 +21,7 @@ export class HttpService {
         const HEADER: Headers = appConfig.header.getHeader(appConfig.header.token);
         const URL: string = appConfig.url + appConfig.url.path + path;
 
-        return this.http.get(URL, {header: 'a3b85b07-d4d0-4c88-9397-dc369306ceb1'})
+        return this.http.get(URL)
             .map(this.callbackMap)
             .catch(this.callbackError);
     }
@@ -31,7 +31,7 @@ export class HttpService {
     }
 
     private callbackError(error: Response) {
-        console.log(error);
+        console.log(error.json());
         return Observable.throw(error.json());
     }
 }
