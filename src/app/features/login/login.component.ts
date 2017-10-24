@@ -1,6 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 
-import { AuthenticationService } from './authentication.service';
+import { AuthenticationService } from '../../core/authentication.service';
 
 @Component({
     selector: 'tt-login',
@@ -9,18 +9,10 @@ import { AuthenticationService } from './authentication.service';
     encapsulation: ViewEncapsulation.None
 })
 export class LoginComponent {
-    error;
-
     constructor(private authenticationService: AuthenticationService) {
     }
 
     submitLoginForm(value) {
-        console.log(value.controls.email);
-        // this.authenticationService.login(value);
+        this.authenticationService.login(value);
     }
-
-    go() {
-        console.log(123);
-    }
-
 }
