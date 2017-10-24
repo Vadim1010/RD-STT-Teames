@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <form class="login-form text-center" ref-loginForm="ngForm" novalidate="true" (submit)="submitLoginForm(loginForm.value)">
+        <form class="login-form text-center" ref-loginForm="ngForm" novalidate="true" (submit)="submitLoginForm(loginForm)">
             <div class="login-form__header">
                 <h2 class="login-form__heading">Students Testing Tool <sup>0.0.1</sup></h2>
             </div>
@@ -9,7 +9,7 @@
                     <div class="login-panel-body">
                         <div class="login-panel-section">
                             <div class="epam-login">
-                                <button class="uui-button large raspberry">
+                                <button class="uui-button large raspberry" (click)="go()">
                                     <i class="fa fa-angle-left"></i>
                                     EPAM Login
                                     <i class="fa fa-angle-right"></i>
@@ -37,10 +37,9 @@
                               email="true"
                               required>
                     </tt-input>
-                    <div *ngIf="loginForm.controls.email?.invalid && loginForm.controls.email.touched" class="help-block">User email is required</div>
-                    <!--<validator-message class="help-block"-->
-                                       <!--[field]="loginForm.email">-->
-                    <!--</validator-message>-->
+                    <validator-message class="help-block"
+                                       [field]="loginForm.controls.email">
+                    </validator-message>
                     <tt-input [inputType]="'password'"
                               [inputIconClass]="'fa-lock'"
                               ngModel

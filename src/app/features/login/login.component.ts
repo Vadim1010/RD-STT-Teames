@@ -15,7 +15,12 @@ export class LoginComponent {
     }
 
     submitLoginForm(value) {
-        this.authenticationService.getForm(value);
+        console.log(value.controls.email);
+        // this.authenticationService.login(value);
+    }
+
+    go() {
+        console.log(123);
     }
 
 }

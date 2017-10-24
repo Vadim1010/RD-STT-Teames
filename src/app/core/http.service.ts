@@ -13,18 +13,16 @@ export class HttpService {
 
     }
 
-    getUsers(value: string, path: string) {
+    postUser(value: string, path: string) {
         return this.http.post(this.URL + appConfig.url.path + path, value, {headers: this.HEADER})
             .map(this.callbackMap)
             .catch(this.callbackError);
     }
 
-    // getToken(value) {
-    //
-    //     return this.http.get(this.URL + appConfig.url.path, {x-token: value})
-    //         .map(this.callbackMap)
-    //         .catch(this.callbackError);
-    // }
+    getLogout (path: string) {
+
+    }
+
 
     private callbackMap(response: Response) {
         return response;

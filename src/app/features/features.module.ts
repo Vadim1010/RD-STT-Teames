@@ -1,8 +1,17 @@
 import { NgModule } from '@angular/core';
-import { LoginModule } from './login/index'
+
+import { LoginModule } from './login';
+import { HomeModule } from './home';
 
 @NgModule({
-  imports: [ LoginModule ],
-  exports: [ LoginModule ]
+    imports: [
+        LoginModule,
+        HomeModule
+    ],
+    exports: [
+        LoginModule,
+        HomeModule
+    ]
 })
-export class FeaturesModule { }
+export class FeaturesModule {
+}

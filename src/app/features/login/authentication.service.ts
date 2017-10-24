@@ -8,25 +8,32 @@ import { appConfig } from '../../app.config';
 export class AuthenticationService {
     pathLogin: string = 'login';
     role: string;
+    token: string;
     error: string;
+    status: boolean = false;
 
     constructor(private httpService: HttpService) {
     }
 
-    getForm(value: LoginForm) {
-        this.httpService.getUsers(this.toJson(value), this.pathLogin)
+    login(value: LoginForm) {
+        this.httpService.postUser(this.toJson(value), this.pathLogin)
             .subscribe(
                 (res) => {
                     console.log(res);
                     sessionStorage.setItem(appConfig.nameToken, res.headers.get(appConfig.nameToken));
                     // this.httpService.TOKEN = res.headers.get(appConfig.nameToken);
+                    this.token = res.headers.get(appConfig.nameToken);
                     this.role = res.json();
+                    this.status = true;
                 },
                 (error) => {
                     this.error = error.message;
                 }
             );
     }
+
+
+
 
     toJson(data: LoginForm): string {
         return JSON.stringify(data);
