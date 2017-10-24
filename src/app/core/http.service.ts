@@ -20,7 +20,7 @@ export class HttpService {
     }
 
     getLogout (path: string) {
-
+        return this.http.get
     }
 
 
