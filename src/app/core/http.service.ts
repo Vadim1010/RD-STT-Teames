@@ -6,29 +6,32 @@ import { appConfig } from '../app.config';
 
 @Injectable()
 export class HttpService {
-    private URL: string = appConfig.url.urlServer;
-    private HEADER: Headers = appConfig.header;
-
-    constructor(private http: Http) {
-
-    }
+    constructor(private http: Http) { }
 
     postUser(value: string, path: string) {
-        return this.http.post(this.URL + appConfig.url.path + path, value, {headers: this.HEADER})
+        const HEADER: Headers = appConfig.header.getHeader(appConfig.header.json);
+        const URL: string = appConfig.url.urlServer + appConfig.url.path + path;
+
+        return this.http.post(URL, value, {headers: HEADER})
             .map(this.callbackMap)
             .catch(this.callbackError);
     }
 
-    getLogout (path: string) {
-        return this.http.get
-    }
+    getLogout(path: string) {
+        const HEADER: Headers = appConfig.header.getHeader(appConfig.header.token);
+        const URL: string = appConfig.url + appConfig.url.path + path;
 
+        return this.http.get(URL, {header: 'a3b85b07-d4d0-4c88-9397-dc369306ceb1'})
+            .map(this.callbackMap)
+            .catch(this.callbackError);
+    }
 
     private callbackMap(response: Response) {
         return response;
     }
 
     private callbackError(error: Response) {
+        console.log(error);
         return Observable.throw(error.json());
     }
 }

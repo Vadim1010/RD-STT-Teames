@@ -5,6 +5,11 @@ export let appConfig = {
         urlServer: 'http://epuadniw0050t1.kyiv.epam.com/testingtool',
         path: '/rest/'
     },
-    header: new Headers({'Content-Type': 'application/json; charset=utf-8'}),
-    nameToken: 'x-token'
+    header: {
+        getHeader: (value) => new Headers({'Content-Type': `${value}; charset=utf-8`}),
+        json: 'application/json',
+        token: 'x-token'
+    },
+    nameToken: 'x-token',
+
 };

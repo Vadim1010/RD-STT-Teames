@@ -3,7 +3,6 @@ import { Injectable } from "@angular/core";
 import { HttpService } from './http.service';
 import { LoginForm } from '../shared/models';
 import { appConfig } from '../app.config';
-import { Subscription } from "rxjs";
 
 @Injectable()
 export class AuthenticationService {
@@ -26,15 +25,19 @@ export class AuthenticationService {
                     this.token = res.headers.get(appConfig.nameToken);
                     this.role = res.json();
                     this.status = true;
-                },
-                (error) => {
-                    this.error = error.message;
                 }
             );
     }
 
     logout() {
-        this.httpService.getLogout(this.pathLogout)
+        this.httpService.getLogout(this.pathLogout).subscribe(
+            (res) => {
+                console.log(res);
+            },
+            (error) => {
+                console.log(error);
+            }
+        )
     }
 
 

@@ -15,4 +15,8 @@ export class LoginComponent {
     submitLoginForm(value) {
         this.authenticationService.login(value);
     }
+
+    logout () {
+        this.authenticationService.logout();
+    }
 }
