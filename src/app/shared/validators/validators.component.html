@@ -1,0 +1,5 @@
+<div *ngIf="(control.invalid && control.touched) || form">
+    <p *ngFor='let key of keys' >
+        <span *ngIf='false || control.errors[key]'>{{errorMessage[key]}}</span>
+    </p>
+</div>

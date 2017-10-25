@@ -1,0 +1,85 @@
+@import '~styles/main';
+
+.login-form {
+  width: 440px;
+  height: 634px;
+  margin: 90px auto;
+
+  .login-form__header {
+    background-color: $color-dark_blue;
+    opacity: 0.85;
+    height: 108px;
+    border: 1px solid transparent;
+
+    .login-form__heading {
+      font-family: Oswald;
+      font-size: 30px;
+      text-transform: none;
+      color: $color-white;
+      margin: 30px 0;
+    }
+  }
+
+  .login-form__body {
+    background-color: $color-white-opacity;
+    border: 1px solid transparent;
+
+    .uui-login-panel .login-panel-body .login-panel-section .epam-login .uui-button {
+      width: 320px;
+      height: 48px;
+      margin-left: -15px;
+    }
+
+    .uui-login-panel .login-panel-body .login-panel-section .login-separator {
+      //margin-left: -10px;
+    }
+
+    .uui-login-panel .login-panel-body .login-panel-section .login-separator .border span {
+      height: 2px;
+      width: 53px;
+    }
+    .uui-login-panel .login-panel-body .login-panel-section .login-separator .border:first-child {
+      text-align: right;
+    }
+    .uui-login-panel .login-panel-body .login-panel-section .login-separator .border:last-child {
+      text-align: left;
+    }
+
+    .uui-login-panel .login-panel-body .login-panel-section .login-separator .text {
+      padding: 0 10px;
+
+      span {
+        width: 20px;
+        height: 14px;
+        font-family: Oswald;
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 0.93;
+        text-align: left;
+        color: $color-gray;
+      }
+    }
+
+    .uui-button--green {
+      background-color: $color-green_lime;
+      border: none;
+
+      &:hover {
+        background-color: $color-dark_green;
+      }
+    }
+
+    .login-form__info {
+      font-family: Oswald;
+      width: 320px;
+      margin: 20px auto;
+      font-size: 10px;
+      font-weight: 500;
+      line-height: 1.4;
+      color: $color-gray;
+      text-align: justify;
+      text-transform: uppercase;
+    }
+  }
+
+}

@@ -1,0 +1,24 @@
+@import '~styles/main';
+
+  .uui-input-group.input-login.default{
+    margin: 10px 0;
+
+    input.inputs__login{
+      width: 320px;
+      height: 42px;
+      background-color: $color-white;
+      border: solid 1px $color-gray_light;
+      font-family: SourceSansPro;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 0.93;
+    }
+
+    .inputs__icon{
+      color: $color-gray_light;
+      margin-left: -40px;
+      margin-top: 11px;
+      font-size: 18px;
+    }
+
+  }
