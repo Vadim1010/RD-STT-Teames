@@ -1,5 +1,5 @@
-<div *ngIf="(control.invalid && control.touched) || form">
-    <p *ngFor='let key of keys' >
-        <span *ngIf='false || control.errors[key]'>{{errorMessage[key]}}</span>
+<div *ngIf="(control.invalid && control.touched) || form" class="validators">
+    <p *ngFor='let key of keys' class="validators__items">
+        <span *ngIf='false || control.errors[key]' class="item">{{errorMessage[key]}}</span>
     </p>
 </div>
