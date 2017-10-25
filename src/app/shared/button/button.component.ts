@@ -1,24 +1,24 @@
 import {
-  Component,
-  ViewEncapsulation,
-  Input,
-  Output,
-  EventEmitter
+    Component,
+    ViewEncapsulation,
+    Input,
+    Output,
+    EventEmitter
 } from '@angular/core';
 
 @Component({
-  selector: 'tt-button',
-  templateUrl: 'button.component.html',
-  styleUrls: ['button.component.scss'],
-  encapsulation: ViewEncapsulation.None
+    selector: 'tt-button',
+    templateUrl: 'button.component.html',
+    styleUrls: ['button.component.scss'],
+    encapsulation: ViewEncapsulation.None
 })
 export class ButtonComponent {
-  @Input() type: string;
-  @Input() className: string;
+    @Input() type: string;
+    @Input() className: string;
 
-  @Output() public onclickHandler: EventEmitter<Event> = new EventEmitter();
+    @Output() public onclickHandler: EventEmitter<Event> = new EventEmitter();
 
-  private clickHandler($event: Event) {
-    this.onclickHandler.emit($event);
-  }
+    private clickHandler($event: Event) {
+        this.onclickHandler.emit($event);
+    }
 }

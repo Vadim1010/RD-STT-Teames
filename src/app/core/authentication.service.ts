@@ -18,8 +18,7 @@ export class AuthenticationService {
 
     login(value: LoginForm) {
         return this.httpService.postUser(this.toJson(value), this.pathLogin)
-            .do(
-                (response) => {
+            .do((response) => {
                     sessionStorage.setItem(appConfig.nameToken, response.headers.get(appConfig.nameToken));
                     this.token = response.headers.get(appConfig.nameToken);
                     this.role = response.json();
@@ -30,20 +29,14 @@ export class AuthenticationService {
 
     logout() {
         this.httpService.getLogout(this.pathLogout)
-            .do(
-            (response) => {
-                console.log(response);
-            },
-            (error) => {
-                console.log(error);
-            }
-        )
-    }
+            .do((response) => {
+                    console.log(response);
 
+                }
+            );
+    };
 
-
-
-    toJson(data: LoginForm): string {
+    private toJson(data: LoginForm): string {
         return JSON.stringify(data);
     }
 }

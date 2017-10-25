@@ -3,7 +3,7 @@ import { HeaderModule } from './header';
 import { FooterModule } from './footer';
 import { InputModule } from './input/input.module';
 import { LoginLayoutModule } from './login-layout';
-import { ValidatorMessageModule } from './validator-message';
+import { ValidatorsModule } from './validators';
 import { ButtonModule } from './button';
 
 @NgModule({
@@ -12,7 +12,7 @@ import { ButtonModule } from './button';
       FooterModule,
       InputModule,
       LoginLayoutModule,
-      ValidatorMessageModule,
+      ValidatorsModule,
       ButtonModule
     ],
     exports: [
@@ -20,7 +20,7 @@ import { ButtonModule } from './button';
       FooterModule,
       InputModule,
       LoginLayoutModule,
-      ValidatorMessageModule,
+      ValidatorsModule,
       ButtonModule
   ]
 })

@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
 
-import { Observable } from "rxjs";
+import { Observable } from 'rxjs';
 import { appConfig } from '../app.config';
 
 @Injectable()
 export class HttpService {
+
     constructor(private http: Http) {
     }
 
@@ -25,7 +26,6 @@ export class HttpService {
         // return this.http.get(URL)
         //     .map(this.callbackMap)
         //     .catch(this.callbackError);
-        console.log('LOGOUT');
     }
 
     private callbackMap(response: Response): Response {
@@ -33,8 +33,6 @@ export class HttpService {
     }
 
     private callbackError(error: Response): Observable<string> {
-        console.log(error.json().message);
-
         return Observable.throw(error.json().message);
     }
 }
