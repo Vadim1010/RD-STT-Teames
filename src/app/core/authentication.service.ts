@@ -11,9 +11,11 @@ export class AuthenticationService {
     role: string;
     token: string;
     error: string;
-    status: boolean = false;
+    status: boolean;
 
     constructor(private httpService: HttpService) {
+        this.status = (sessionStorage.getItem(appConfig.nameToken)) ? true : false;
+        console.log(this.status);
     }
 
     login(value: LoginForm) {
