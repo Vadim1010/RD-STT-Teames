@@ -15,7 +15,6 @@ export class AuthenticationService {
 
     constructor(private httpService: HttpService) {
         this.status = (sessionStorage.getItem(appConfig.nameToken)) ? true : false;
-        console.log(this.status);
     }
 
     login(value: LoginForm) {
